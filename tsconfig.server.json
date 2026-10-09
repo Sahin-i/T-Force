@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2022","lib":["ES2022","DOM"],"module":"NodeNext","moduleResolution":"NodeNext","strict":true,"skipLibCheck":true,"esModuleInterop":true,"outDir":"dist","rootDir":".","types":["node"]},"include":["server","shared"]}

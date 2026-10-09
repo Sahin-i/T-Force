@@ -1,0 +1,1 @@
+Fictional test procedure. Sum the finite nonnegative Decimal amounts in the uploaded CSV. The item is ready only when the total is strictly below AZN10. Otherwise block it. Produce totals.txt with the total and classification. An employee must approve before one local reviews queue record. This is synthetic and no payment is made.

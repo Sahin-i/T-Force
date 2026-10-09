@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.server.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "server",
+    "shared",
+    "scripts",
+    "tests",
+    "playwright.config.ts"
+  ]
+}

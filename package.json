@@ -1,0 +1,68 @@
+{
+  "name": "local-office-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,ui \"node --import tsx --watch server/index.ts\" \"vite --host 127.0.0.1\"",
+    "build": "npm run typecheck && vite build && tsc -p tsconfig.server.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.tools.json",
+    "start": "node dist/server/index.js",
+    "sandbox:build": "docker build -t office-agent-sandbox:local sandbox",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "verify:azure": "node --import tsx scripts/verify-azure.ts",
+    "test:docker": "RUN_DOCKER_TESTS=1 node --import tsx --test tests/docker.integration.ts tests/runtime.integration.ts tests/workflow-runtime.integration.ts",
+    "test:acceptance": "node --import tsx scripts/acceptance.ts",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:live": "E2E_APP_URL=http://127.0.0.1:3001 playwright test",
+    "db:init": "node --import tsx scripts/init-database.ts",
+    "test:database": "RUN_DOCKER_TESTS=1 node --import tsx --test tests/database.integration.ts",
+    "verify:database": "node --import tsx scripts/verify-database.ts",
+    "fixtures:workflows": "node --import tsx scripts/generate-workflow-fixtures.ts",
+    "evaluate:workflows": "node --import tsx scripts/evaluate-workflows.ts",
+    "evaluate:general-agent": "node --import tsx scripts/evaluate-general-agent.ts",
+    "catalog:setup": "node --import tsx scripts/setup-workflow-catalog.ts",
+    "catalog:demo": "node --import tsx scripts/demo-workflow-cases.ts",
+    "catalog:simple": "node --import tsx scripts/setup-simple-workflow.ts",
+    "catalog:cleanup": "node --import tsx scripts/archive-workflow-clutter.ts",
+    "verify:workflow-author": "node --import tsx scripts/verify-workflow-author.ts",
+    "verify:invoice-integrity": "node --import tsx scripts/verify-invoice-integrity.ts --candidate=catalog/simple-invoice/reviewed-package.json",
+    "submission:package": "node --import tsx scripts/export-review-evidence.ts --zip"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.4.0",
+    "@fastify/static": "^10.1.5",
+    "docx-preview": "^0.4.1",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.6.1",
+    "fflate": "^0.8.3",
+    "lucide-react": "^0.468.0",
+    "openai": "^6.0.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.0"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

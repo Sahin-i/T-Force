@@ -1,0 +1,37 @@
+.office-preview { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 300px; overflow: hidden; position: relative; color: #263b2c; }
+.office-preview > .preview-loading { flex: 1; }
+.office-preview-error { display: flex; flex: 1; align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 48px 24px; text-align: center; }
+.office-preview-error > svg { color: #9a6d44; }
+.office-preview-error strong { font-size: 16px; font-weight: 600; }
+.office-preview-error p { max-width: 560px; margin: 0 0 4px; line-height: 1.6; color: #64715e; }
+.office-docx-frame { border: 0; display: block; width: 100%; flex: 1; min-height: 0; background: #eef0ec; }
+.office-docx-frame[hidden] { display: none; }
+.office-preview-note { margin: 0; flex-shrink: 0; padding: 11px 20px; background: #fbfcf7; border-top: 1px solid #e3e8da; color: #747f69; font-size: 11px; line-height: 1.5; }
+.workbook-preview { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; background: #fff; }
+.workbook-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; min-height: 45px; padding: 10px 18px; border-bottom: 1px solid #e3e8da; font-size: 12px; }
+.workbook-toolbar strong { font-weight: 600; }
+.workbook-toolbar > span { margin-left: auto; color: #747f69; font-size: 11px; }
+.workbook-formula { display: flex; align-items: center; gap: 12px; min-height: 36px; padding: 7px 15px; border-bottom: 1px solid #e3e8da; background: #fbfcf7; font-size: 12px; }
+.workbook-formula > span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.workbook-formula small { color: #747f69; margin-left: auto; flex-shrink: 0; }
+.workbook-address { width: 45px; border-right: 1px solid #dde4d2; padding-right: 10px; flex-shrink: 0; color: #6c7e56; font-weight: 600; }
+.workbook-grid-scroll { overflow: auto; flex: 1; min-height: 0; }
+.workbook-grid { table-layout: fixed; border-collapse: separate; border-spacing: 0; width: max-content; min-width: 100%; font-size: 12px; line-height: 1.5; }
+.workbook-grid .workbook-row-number { width: 45px; }
+.workbook-grid th, .workbook-grid td { border-right: 1px solid #e4e8df; border-bottom: 1px solid #e4e8df; padding: 0; height: 29px; position: relative; }
+.workbook-grid th { position: sticky; color: #65765a; background: #f4f6ef; text-align: center; font-size: 11px; font-weight: 500; z-index: 1; }
+.workbook-grid thead th { top: 0; z-index: 2; }
+.workbook-grid tbody th { left: 0; }
+.workbook-grid thead th:first-child { left: 0; z-index: 3; }
+.workbook-cell { border: 0; background: transparent; display: block; width: 100%; height: 100%; min-height: 29px; padding: 5px 9px; text-align: inherit; color: inherit; font: inherit; white-space: inherit; cursor: pointer; }
+.workbook-cell > span:first-child { display: block; overflow: hidden; text-overflow: ellipsis; max-width: 360px; white-space: inherit; }
+.workbook-cell:focus-visible { outline: 2px solid #809d58; outline-offset: -2px; }
+.workbook-selected-cell { box-shadow: inset 0 0 0 2px #809d58; }
+.workbook-formula-indicator { position: absolute; top: 2px; right: 2px; width: 0; height: 0; border-top: 5px solid #859d60; border-left: 5px solid transparent; }
+.workbook-sheet-tabs { display: flex; gap: 4px; padding: 6px 10px; overflow-x: auto; flex-shrink: 0; border-top: 1px solid #dde4d2; background: #f7f9f1; }
+.workbook-sheet-tabs button { border: 0; border-radius: 4px; padding: 7px 14px; white-space: nowrap; background: transparent; color: #71805d; font: inherit; font-size: 12px; cursor: pointer; }
+.workbook-sheet-tabs button.selected { background: #fff; color: #48602e; box-shadow: 0 1px 3px #18301215; font-weight: 600; }
+.workbook-sheet-tabs button:focus-visible { outline: 2px solid #809d58; }
+.workbook-sheet-tabs small { opacity: .7; font-weight: 400; }
+.office-empty { display: flex; justify-content: center; padding: 50px 24px; color: #747f69; font-size: 13px; }
+@media (max-width: 600px) { .workbook-formula small { display: none; } .workbook-toolbar { padding: 10px 12px; } .office-preview-note { padding: 9px 12px; } }

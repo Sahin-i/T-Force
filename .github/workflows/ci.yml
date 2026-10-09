@@ -1,0 +1,37 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: sandbox/requirements.txt
+      - name: Check public source contents
+        run: python .github/check-public-files.py
+      - name: Install locked JavaScript dependencies
+        run: npm ci
+      - name: Install document test libraries
+        run: python -m pip install -r sandbox/requirements.txt
+      - name: Test
+        run: npm test
+        env:
+          WORKFLOW_TEST_PYTHON: python
+      - name: Build frontend and backend
+        run: npm run build

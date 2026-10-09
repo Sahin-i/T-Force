@@ -1,0 +1,4 @@
+Compare the supplier invoice with the purchase order.
+Flag any difference in quantities, prices, or totals.
+Make a short review summary showing the amount and any issues.
+Ask me to approve matching invoices before adding them to the payment list.

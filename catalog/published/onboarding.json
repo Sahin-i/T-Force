@@ -1,0 +1,349 @@
+{
+  "package": {
+    "schemaVersion": 1,
+    "name": "Corporate subscriber onboarding",
+    "slug": "corporate-subscriber-onboarding",
+    "purpose": "Teach corporate subscriber onboarding from the supplied fictional procedure and synthetic registry snapshot. Compare the application, legal-entity extract, representative identification and authority. Request the identification specifically when it is absent. An electronic extract without a stamp is acceptable if registry information agrees; contract stamp requirements depend on the signer. Keep optional documents optional. Require a human signature authenticity check. Produce checklist.xlsx, application-packet.docx and a conditional missing-information.docx. Require employee approval before a simulated provisioning queue record.",
+    "synthetic": true,
+    "inputs": [
+      {
+        "key": "documents",
+        "label": "Procedure documents and business inputs",
+        "required": true,
+        "kind": "file",
+        "description": "Synthetic PDFs, DOCX, XLSX/CSV records and read-only SQLite reference snapshots."
+      }
+    ],
+    "references": [
+      {
+        "path": "sources/subscriber-documentation.md",
+        "title": "Saved public process reference",
+        "sourceUrl": "https://www.azercell.com/en/personal/support/number-purchase-and-operations/who-may-be-a-subscriber-of-azercell.html",
+        "fictional": false
+      },
+      {
+        "path": "policy.txt",
+        "title": "Fictional demonstration policy",
+        "fictional": true
+      }
+    ],
+    "rules": [
+      {
+        "id": "rule-1",
+        "text": "Compare company identifiers, company names and representative identity across documents and registry.",
+        "source": "policy.txt"
+      },
+      {
+        "id": "rule-2",
+        "text": "Require representative identification and authority for a subscriber contract. Accept an unstamped electronic extract when registry data agrees.",
+        "source": "policy.txt"
+      },
+      {
+        "id": "rule-3",
+        "text": "A head-signed contract requires a stamp; an authorized representative contract does not. Optional bank and tax-certificate documents remain optional.",
+        "source": "policy.txt"
+      },
+      {
+        "id": "rule-4",
+        "text": "Signature authenticity and original authority remain employee checks. Use application ID as provisioning business key.",
+        "source": "policy.txt"
+      }
+    ],
+    "deliverables": [
+      "Cross-document checklist",
+      "Application packet",
+      "Missing information request"
+    ],
+    "exceptions": [
+      "Ask for missing, unreadable or conflicting evidence.",
+      "Blocked business findings are completed investigations.",
+      "Image-only scans require clarification in the deterministic recipe parser."
+    ],
+    "approval": "Explicit employee approval binds to the exact case revision, structured result, source snapshots and artifact hashes.",
+    "questions": [],
+    "assumptions": [
+      "All supplied company data and credit policies are fictional.",
+      "Local simulated queues; no external payments, provisioning or messaging.",
+      "Deterministic recipe handles labeled English and Azerbaijani text documents; unrestricted layouts require AI extraction."
+    ],
+    "steps": [
+      {
+        "id": "validate",
+        "type": "python",
+        "title": "Compare subscriber documents",
+        "instructions": "Teach corporate subscriber onboarding from the supplied fictional procedure and synthetic registry snapshot. Compare the application, legal-entity extract, representative identification and authority. Request the identification specifically when it is absent. An electronic extract without a stamp is acceptable if registry information agrees; contract stamp requirements depend on the signer. Keep optional documents optional. Require a human signature authenticity check. Produce checklist.xlsx, application-packet.docx and a conditional missing-information.docx. Require employee approval before a simulated provisioning queue record.",
+        "inputs": [
+          "documents",
+          "references"
+        ],
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "businessKey": {
+              "type": "string"
+            },
+            "disposition": {
+              "type": "string",
+              "enum": [
+                "ready",
+                "blocked",
+                "clarification",
+                "escalated"
+              ]
+            },
+            "findings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source": {
+                          "type": "string"
+                        },
+                        "location": {
+                          "type": "string"
+                        },
+                        "quote": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "code",
+                  "message",
+                  "evidence"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "queueRecord": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "businessKey",
+            "disposition",
+            "findings",
+            "queueRecord"
+          ],
+          "additionalProperties": true
+        },
+        "artifacts": [
+          {
+            "path": "checklist.xlsx",
+            "label": "Cross-document checklist",
+            "required": true
+          },
+          {
+            "path": "application-packet.docx",
+            "label": "Application packet",
+            "required": true
+          },
+          {
+            "path": "missing-information.docx",
+            "label": "Missing information request",
+            "required": true,
+            "when": {
+              "stepId": "validate",
+              "path": "disposition",
+              "operator": "ne",
+              "value": "ready"
+            }
+          }
+        ],
+        "script": "scripts/validate.py"
+      },
+      {
+        "id": "review",
+        "type": "review",
+        "title": "Employee review and approval",
+        "instructions": "Before approving, personally inspect the original authority document to confirm it is authentic, current and authorizes the subscriber contract; independently check signature authenticity. Confirm the findings and documents match. An unstamped electronic extract is acceptable when its registry information agrees with the synthetic registry snapshot; do not reject it solely for having no stamp. Approve only after these checks and employee review are complete.",
+        "inputs": [
+          "validate"
+        ],
+        "outputSchema": {
+          "type": "object"
+        },
+        "artifacts": [],
+        "condition": {
+          "stepId": "validate",
+          "path": "disposition",
+          "operator": "eq",
+          "value": "ready"
+        }
+      },
+      {
+        "id": "commit",
+        "type": "queue",
+        "title": "Commit approved simulated record",
+        "instructions": "The backend commits the exact approved record transactionally and prevents duplicate business keys.",
+        "inputs": [
+          "validate",
+          "review"
+        ],
+        "outputSchema": {
+          "type": "object"
+        },
+        "artifacts": [],
+        "condition": {
+          "stepId": "validate",
+          "path": "disposition",
+          "operator": "eq",
+          "value": "ready"
+        },
+        "destination": "provisioning",
+        "businessKeyPath": "validate.businessKey",
+        "recordPath": "validate.queueRecord"
+      }
+    ],
+    "assets": {
+      "scripts/validate.py": "\"\"\"Synthetic catalog procedures. Inputs and snapshots are read-only; no mutations.\n\nThis deliberately conservative text extractor handles the documented fixture\nformats. Image-only, unknown and contradictory documents require clarification.\nIt never reads evaluator answer keys or treats filenames as business evidence.\n\"\"\"\nfrom pathlib import Path\nfrom decimal import Decimal, InvalidOperation\nimport csv\nimport json\nimport os\nimport re\nimport sqlite3\nfrom docx import Document\nfrom docx.shared import Inches, Pt, RGBColor\nfrom openpyxl import Workbook, load_workbook\nfrom openpyxl.styles import Alignment, Font, PatternFill\nfrom pypdf import PdfReader\n\nINPUTS = Path(os.environ.get(\"WORKFLOW_INPUTS\", \"/workspace/inputs\"))\nREFERENCES = Path(os.environ.get(\"WORKFLOW_REFERENCES\", \"/workspace/references\"))\nOUTPUTS = Path(os.environ.get(\"WORKFLOW_OUTPUTS\", \"/workspace/output\"))\nPACKAGE = Path(os.environ.get(\"WORKFLOW_PACKAGE\", \"/workspace/package\"))\nPREVIOUS = Path(os.environ.get(\"WORKFLOW_PRECEDING\", \"/workspace/preceding\"))\n\nALIASES = {\n    \"invoice_number\": [\"invoice number\", \"invoice no\", \"hesab faktura\"],\n    \"supplier_id\": [\"supplier id\", \"təchizatçı\", \"techizatci\"],\n    \"po_number\": [\"purchase order\", \"po number\", \"sifariş\", \"sifaris\"],\n    \"currency\": [\"currency\", \"valyuta\"], \"bank\": [\"bank\", \"iban\"],\n    \"sku\": [\"sku\", \"məhsul\", \"mehsul\"], \"quantity\": [\"quantity\", \"miqdar\"],\n    \"unit_price\": [\"unit price\", \"vahid qiymət\", \"vahid qiymet\"],\n    \"total\": [\"total\", \"cəmi\", \"cemi\"],\n    \"application_id\": [\"application id\", \"müraciət\", \"muraciet\"],\n    \"company_id\": [\"company id\", \"voen\", \"vöen\"],\n    \"company_name\": [\"company name\", \"şirkət\", \"sirket\"],\n    \"representative\": [\"representative\", \"nümayəndə\", \"numayende\"],\n    \"representative_id\": [\"representative id\", \"id number\", \"şəxsiyyət\", \"sexsiyyet\"],\n    \"registration\": [\"registration\", \"qeydiyyat\"], \"stamp\": [\"stamp\", \"möhür\", \"mohur\"],\n    \"authority\": [\"authority\", \"səlahiyyət\", \"selahiyyet\"],\n    \"signer_role\": [\"signer role\", \"imzalayan\"], \"valid_until\": [\"valid until\", \"etibarlıdır\"],\n    \"complaint_id\": [\"complaint id\", \"şikayət\", \"sikayet\"],\n    \"account_id\": [\"account id\", \"abunəçi\", \"abuneci\"],\n    \"billing_period\": [\"billing period\", \"dövr\", \"dovr\"],\n}\n\n\nclass MissingEvidence(ValueError):\n    def __init__(self, source):\n        self.source = source\n        super().__init__(f\"Required reference snapshot {source} is missing\")\n\n\ndef text_of(file):\n    if file.suffix.lower() == \".pdf\":\n        return \"\\n\".join(page.extract_text() or \"\" for page in PdfReader(file).pages)\n    if file.suffix.lower() == \".docx\":\n        document = Document(file)\n        return \"\\n\".join([p.text for p in document.paragraphs] +\n                         [\"\\n\".join(cell.text for cell in row.cells) for table in document.tables for row in table.rows])\n    if file.suffix.lower() in [\".txt\", \".md\"]:\n        return file.read_text(encoding=\"utf-8\")\n    return \"\"\n\n\ndef extract(file):\n    text = text_of(file)\n    fields = {}\n    conflicts = []\n    for key, labels in ALIASES.items():\n        values = []\n        for label in labels:\n            values.extend(re.findall(r\"(?im)^\\s*\" + re.escape(label) + r\"\\s*[:=]\\s*([^\\n\\r]+)\", text))\n        values = list(dict.fromkeys(value.strip() for value in values if value.strip()))\n        if len(values) == 1:\n            fields[key] = values[0]\n        elif len(values) > 1:\n            conflicts.append(key)\n    return fields, conflicts, text\n\n\ndef documents(prefix=None):\n    files = sorted(p for p in INPUTS.rglob(\"*\") if p.is_file() and\n                   p.suffix.lower() in [\".pdf\", \".docx\", \".txt\", \".md\"])\n    if prefix:\n        named = [p for p in files if p.name.lower().startswith(prefix)]\n        if named:\n            return named\n        discriminators = {\"invoice\": \"total\", \"application\": \"application_id\", \"extract\": \"registration\", \"authority\": \"authority\", \"identification\": \"valid_until\", \"complaint\": \"complaint_id\"}\n        key = discriminators.get(prefix)\n        files = [p for p in files if key in extract(p)[0]] if key else []\n    return files\n\n\ndef snapshot(name):\n    candidates = list(REFERENCES.rglob(name)) + list(INPUTS.rglob(name))\n    if not candidates:\n        raise MissingEvidence(name)\n    return candidates[0]\n\n\ndef db(name):\n    conn = sqlite3.connect(\"file:\" + str(snapshot(name)) + \"?mode=ro\", uri=True)\n    conn.row_factory = sqlite3.Row\n    return conn\n\n\ndef money(value):\n    # Preserve input precision for exact price and tolerance comparisons. Only\n    # final displayed/queued amounts are rounded to currency precision.\n    number = Decimal(str(value).replace(\",\", \".\"))\n    if not number.is_finite():\n        raise InvalidOperation(\"Financial values must be finite\")\n    return number\n\n\ndef issue(code, message, evidence, severity=\"block\"):\n    return {\"code\": code, \"message\": message, \"severity\": severity,\n            \"evidence\": [{\"source\": evidence, \"location\": code, \"quote\": message}]}\n\n\ndef missing_reference(source):\n    return issue(\"missing_reference\", f\"Provide the required {source} reference snapshot.\", source, \"clarification\")\n\n\ndef finish(key, extracted, findings, queue=None, **extra):\n    disposition = \"clarification\" if any(f[\"severity\"] == \"clarification\" for f in findings) else \\\n        \"escalated\" if any(f[\"severity\"] == \"escalate\" for f in findings) else \\\n        \"blocked\" if findings else \"ready\"\n    return {\"businessKey\": key, \"disposition\": disposition, \"ready\": disposition == \"ready\",\n            \"findings\": findings, \"extracted\": extracted, \"queueRecord\": queue or {},\n            \"synthetic\": True, **extra}\n\n\ndef invoice():\n    files = documents(\"invoice\") or [p for p in documents() if p.suffix.lower() == \".pdf\"]\n    if not files:\n        return finish(\"unidentified-invoice\", {}, [issue(\"missing_invoice\", \"Upload the invoice PDF.\", \"inputs\", \"clarification\")])\n    fields, conflicts, text = extract(files[0])\n    findings = [issue(\"conflicting_field\", f\"Conflicting {key} values require clarification.\", files[0].name, \"clarification\") for key in conflicts]\n    required = [\"invoice_number\", \"supplier_id\", \"po_number\", \"currency\", \"bank\", \"sku\", \"quantity\", \"unit_price\", \"total\"]\n    for key in required:\n        if key not in fields:\n            findings.append(issue(\"missing_\" + key, \"Provide a readable \" + key.replace(\"_\", \" \") + \".\", files[0].name, \"clarification\"))\n    business_key = fields.get(\"supplier_id\", \"unknown\") + \":\" + fields.get(\"invoice_number\", \"unknown\")\n    if any(key not in fields for key in required) or conflicts:\n        return finish(business_key, fields, findings)\n    try:\n        quantity, price, declared_total = money(fields[\"quantity\"]), money(fields[\"unit_price\"]), money(fields[\"total\"])\n        if quantity <= 0:\n            raise InvalidOperation()\n    except (InvalidOperation, ValueError):\n        return finish(business_key, fields, [issue(\"invalid_numeric\", \"Quantity must be positive; quantity, unit price and total must be readable finite numbers.\", files[0].name, \"clarification\")])\n    for source in [\"purchase-orders.xlsx\", \"supplier-records.sqlite\"]:\n        try:\n            snapshot(source)\n        except MissingEvidence as error:\n            findings.append(missing_reference(error.source))\n    if findings:\n        return finish(business_key, fields, findings)\n    purchase_orders = load_workbook(snapshot(\"purchase-orders.xlsx\"), read_only=True, data_only=True)\n    sheet = purchase_orders[\"Orders\"]\n    rows = list(sheet.values)\n    orders = [dict(zip(rows[0], row)) for row in rows[1:] if row[0]]\n    conn = db(\"supplier-records.sqlite\")\n    try:\n        supplier = conn.execute(\"SELECT * FROM suppliers WHERE supplier_id=?\", (fields[\"supplier_id\"],)).fetchone()\n        if not supplier:\n            findings.append(issue(\"unknown_supplier\", \"Supplier is absent from the approved supplier snapshot.\", \"supplier-records.sqlite:suppliers\"))\n        elif fields[\"bank\"] != supplier[\"bank\"]:\n            findings.append(issue(\"bank_mismatch\", \"Invoice bank details do not match the approved supplier.\", \"supplier-records.sqlite:suppliers\"))\n        if fields[\"currency\"] != \"AZN\":\n            findings.append(issue(\"currency_mismatch\", \"The fictional policy approves AZN only.\", \"policy.docx:Currency\"))\n        matched = [row for row in orders if str(row[\"po_number\"]) == fields[\"po_number\"]]\n        if not matched:\n            findings.append(issue(\"unknown_po\", \"Purchase order was not found.\", \"purchase-orders.xlsx:Orders\"))\n        else:\n            if any(row[\"supplier_id\"] != fields[\"supplier_id\"] for row in matched):\n                findings.append(issue(\"supplier_po_mismatch\", \"Supplier does not correspond to the purchase order.\", \"purchase-orders.xlsx:Orders\"))\n            aliases = [row[\"sku\"] for row in conn.execute(\"SELECT sku FROM aliases WHERE alias=?\", (fields[\"sku\"],))]\n            sku = fields[\"sku\"] if any(row[\"sku\"] == fields[\"sku\"] for row in matched) else aliases[0] if len(aliases) == 1 else None\n            lines = [row for row in matched if row[\"sku\"] == sku]\n            if len(lines) != 1:\n                findings.append(issue(\"ambiguous_sku\", \"SKU must identify exactly one order line or approved alias.\", \"purchase-orders.xlsx:Orders; supplier-records.sqlite:aliases\", \"clarification\"))\n            else:\n                row = lines[0]\n                delivered = Decimal(str(conn.execute(\"SELECT COALESCE(SUM(quantity),0) FROM deliveries WHERE po_number=? AND sku=?\", (fields[\"po_number\"], sku)).fetchone()[0]))\n                billed = Decimal(str(conn.execute(\"SELECT COALESCE(SUM(quantity),0) FROM billing WHERE po_number=? AND sku=? AND approved=1\", (fields[\"po_number\"], sku)).fetchone()[0]))\n                remaining_order = Decimal(str(row[\"quantity\"])) - billed\n                remaining_delivery = delivered - billed\n                fields.update({\"matched_sku\": sku, \"delivered\": str(delivered), \"prior_approved_quantity\": str(billed)})\n                if quantity > remaining_order:\n                    findings.append(issue(\"excess_order_quantity\", f\"Quantity {quantity} exceeds remaining order {remaining_order}.\", \"purchase-orders.xlsx:Orders; supplier-records.sqlite:billing\"))\n                if quantity > remaining_delivery:\n                    findings.append(issue(\"excess_delivery_quantity\", f\"Quantity {quantity} exceeds remaining delivery {remaining_delivery}.\", \"supplier-records.sqlite:deliveries,billing\"))\n                if price != money(row[\"unit_price\"]):\n                    findings.append(issue(\"price_mismatch\", f\"Unit price {price} differs from agreed {money(row['unit_price'])}.\", \"purchase-orders.xlsx:Orders\"))\n        raw_calculated = quantity * price\n        calculated = raw_calculated.quantize(Decimal(\"0.01\"))\n        tolerance = Decimal(\"0.01\")\n        policy_settings = PACKAGE / \"settings.json\"\n        if policy_settings.exists():\n            tolerance = Decimal(str(json.loads(policy_settings.read_text()).get(\"totalTolerance\", \"0.01\")))\n        if abs(raw_calculated - declared_total) > tolerance:\n            findings.append(issue(\"total_mismatch\", f\"Declared total {declared_total} differs from calculated {raw_calculated} beyond tolerance {tolerance} AZN.\", \"policy.docx:Totals; \" + files[0].name))\n        if conn.execute(\"SELECT 1 FROM billing WHERE supplier_id=? AND invoice_number=? AND approved=1\", (fields[\"supplier_id\"], fields[\"invoice_number\"])).fetchone():\n            findings.append(issue(\"duplicate_invoice\", \"This supplier invoice is already in approved billing.\", \"supplier-records.sqlite:billing\"))\n        queue = {\"supplierId\": fields[\"supplier_id\"], \"invoiceNumber\": fields[\"invoice_number\"], \"poNumber\": fields[\"po_number\"], \"currency\": fields[\"currency\"], \"amount\": float(calculated), \"quantity\": float(quantity)}\n        return finish(business_key, fields, findings, queue, calculatedTotal=float(calculated))\n    finally:\n        conn.close()\n        purchase_orders.close()\n\n\ndef onboarding():\n    found = {}\n    findings = []\n    for name in [\"application\", \"extract\", \"authority\", \"identification\"]:\n        files = documents(name)\n        if files:\n            fields, conflicts, _ = extract(files[0])\n            found[name] = fields\n            for key in conflicts:\n                findings.append(issue(\"conflicting_field\", f\"Conflicting {key} in {name}.\", files[0].name, \"clarification\"))\n    app = found.get(\"application\", {})\n    company = app.get(\"company_id\")\n    key = app.get(\"application_id\", \"unidentified-application\")\n    for name in [\"application\", \"extract\", \"authority\", \"identification\"]:\n        if name not in found:\n            findings.append(issue(\"missing_\" + name, f\"Provide the representative {'identification document' if name == 'identification' else name + ' document'}.\", \"inputs\", \"clarification\"))\n    required = {\"application\": [\"application_id\", \"company_id\", \"company_name\", \"representative\", \"signer_role\"], \"extract\": [\"company_id\", \"company_name\", \"registration\"], \"authority\": [\"company_id\", \"representative\", \"representative_id\", \"authority\"], \"identification\": [\"representative\", \"representative_id\", \"valid_until\"]}\n    for name, keys in required.items():\n        if name in found:\n            for field in keys:\n                if field not in found[name]:\n                    findings.append(issue(\"missing_\" + field, f\"Clarify {field} in {name}.\", name, \"clarification\"))\n    for name, fields in found.items():\n        if fields.get(\"company_id\") and company and fields[\"company_id\"] != company:\n            findings.append(issue(\"company_conflict\", f\"Company identifier in {name} disagrees with application.\", name))\n        if fields.get(\"representative\") and app.get(\"representative\") and fields[\"representative\"] != app[\"representative\"]:\n            findings.append(issue(\"representative_conflict\", f\"Representative in {name} disagrees with application.\", name))\n    authority, identity, extract_fields = found.get(\"authority\", {}), found.get(\"identification\", {}), found.get(\"extract\", {})\n    if authority.get(\"representative_id\") and identity.get(\"representative_id\") and authority[\"representative_id\"] != identity[\"representative_id\"]:\n        findings.append(issue(\"identification_conflict\", \"Identity document does not match the authorized representative.\", \"authority; identification\"))\n    if authority.get(\"authority\") and authority[\"authority\"].lower() != \"subscriber contract\":\n        findings.append(issue(\"insufficient_authority\", \"Power of attorney does not authorize a subscriber contract.\", \"authority\"))\n    if identity.get(\"valid_until\", \"9999\") < \"2026-10-09\":\n        findings.append(issue(\"expired_identification\", \"Identification has expired as of the synthetic snapshot date.\", \"identification\"))\n    if app.get(\"signer_role\") == \"head\" and app.get(\"stamp\", \"no\").lower() != \"yes\":\n        findings.append(issue(\"missing_contract_stamp\", \"A head-signed contract requires the company stamp.\", \"procedure.docx:Conditional stamp\"))\n    # An electronic registration extract has no stamp: this is valid and must not\n    # be confused with the separate head-signed contract stamp condition.\n    if company:\n        try:\n            conn = db(\"registry.sqlite\")\n        except MissingEvidence as error:\n            return finish(key, found, findings + [missing_reference(error.source)], employeeChecks=[\"Check signature authenticity and original representative authority before approval.\"], stampRequired=app.get(\"signer_role\") == \"head\")\n        try:\n            row = conn.execute(\"SELECT * FROM registry WHERE company_id=?\", (company,)).fetchone()\n            if not row:\n                findings.append(issue(\"registry_missing\", \"Official-register snapshot does not contain the company.\", \"registry.sqlite:registry\", \"clarification\"))\n            elif row[\"company_name\"] != app.get(\"company_name\") or row[\"company_name\"] != extract_fields.get(\"company_name\"):\n                findings.append(issue(\"registry_conflict\", \"Company name conflicts with the synthetic official-register snapshot.\", \"registry.sqlite:registry; extract\"))\n        finally:\n            conn.close()\n    queue = {\"applicationId\": key, \"companyId\": company, \"representative\": app.get(\"representative\"), \"signatureCheck\": \"employee_required\"}\n    return finish(key, found, findings, queue, employeeChecks=[\"Check signature authenticity and original representative authority before approval.\"], stampRequired=app.get(\"signer_role\") == \"head\")\n\n\ndef complaints():\n    files = documents(\"complaint\")\n    if not files:\n        return finish(\"unidentified-complaint\", {}, [issue(\"missing_complaint\", \"Provide the complaint.\", \"inputs\", \"clarification\")])\n    fields, conflicts, _ = extract(files[0])\n    findings = []\n    for key in [\"complaint_id\", \"account_id\", \"billing_period\"]:\n        if key not in fields:\n            findings.append(issue(\"missing_\" + key, f\"Provide {key}.\", files[0].name, \"clarification\"))\n    for key in conflicts:\n        findings.append(issue(\"conflicting_field\", f\"Conflicting {key} values.\", files[0].name, \"clarification\"))\n    key = fields.get(\"complaint_id\", \"unidentified-complaint\")\n    invoice_files = documents(\"invoice\")\n    invoice_fields = extract(invoice_files[0])[0] if invoice_files else {}\n    if not invoice_fields.get(\"total\"):\n        findings.append(issue(\"missing_invoice\", \"Provide a readable bill with its total.\", \"inputs\", \"clarification\"))\n    events_path = next(iter(INPUTS.rglob(\"events.csv\")), None)\n    if not events_path:\n        return finish(key, fields, findings + [issue(\"missing_events\", \"Charge and usage evidence is missing; escalate investigation.\", \"inputs\", \"escalate\")], creditRecommendation=0)\n    with events_path.open(newline=\"\", encoding=\"utf-8\") as file:\n        events = list(csv.DictReader(file))\n    scoped = [event for event in events if event.get(\"account_id\") == fields.get(\"account_id\") and event.get(\"billing_period\") == fields.get(\"billing_period\")]\n    charges = [event for event in scoped if event.get(\"kind\") == \"charge\"]\n    usage = {event[\"event_id\"]: event for event in scoped if event.get(\"kind\") == \"usage\"}\n    seen_transactions = {}\n    unique_charges = []\n    for event in charges:\n        previous = seen_transactions.get(event[\"transaction_id\"])\n        if previous and previous != event:\n            findings.append(issue(\"transaction_conflict\", \"The same transaction ID contains conflicting evidence.\", \"events.csv\", \"escalate\"))\n        elif not previous:\n            unique_charges.append(event)\n            seen_transactions[event[\"transaction_id\"]] = event\n    grouped = {}\n    charged_total = Decimal(\"0\")\n    for event in unique_charges:\n        if event[\"event_id\"] not in usage:\n            findings.append(issue(\"missing_usage_evidence\", \"Charge has no matching billable usage event: \" + event[\"event_id\"], \"events.csv\", \"escalate\"))\n        try:\n            charged_total += money(event[\"amount\"])\n            grouped.setdefault(event[\"event_id\"], []).append(event)\n        except InvalidOperation:\n            findings.append(issue(\"invalid_charge\", \"Unreadable charge amount.\", \"events.csv\", \"clarification\"))\n    credit = Decimal(\"0\")\n    duplicate_evidence = []\n    for event_id, group in grouped.items():\n        ordered = sorted(group, key=lambda event: (event[\"timestamp\"], event[\"transaction_id\"]))\n        if len(ordered) > 1:\n            credit += sum((money(event[\"amount\"]) for event in ordered[1:]), Decimal(\"0\"))\n            duplicate_evidence.append({\"eventId\": event_id, \"transactions\": [event[\"transaction_id\"] for event in ordered], \"credit\": float(sum((money(event[\"amount\"]) for event in ordered[1:]), Decimal(\"0\")))})\n    if invoice_fields.get(\"total\") and abs(money(invoice_fields[\"total\"]) - charged_total) > Decimal(\"0.01\"):\n        findings.append(issue(\"bill_reconciliation\", \"Bill total does not reconcile with the charge ledger.\", \"invoice; events.csv\", \"escalate\"))\n    try:\n        conn = db(\"accounts.sqlite\")\n    except MissingEvidence as error:\n        return finish(key, fields, findings + [missing_reference(error.source)], creditRecommendation=float(credit), chargedTotal=float(charged_total), duplicateEvidence=duplicate_evidence, timeline=scoped)\n    try:\n        account = conn.execute(\"SELECT * FROM accounts WHERE account_id=?\", (fields.get(\"account_id\", \"\"),)).fetchone()\n        if not account:\n            findings.append(issue(\"unknown_account\", \"Account not found in account snapshot.\", \"accounts.sqlite:accounts\", \"clarification\"))\n        if conn.execute(\"SELECT 1 FROM resolutions WHERE complaint_id=?\", (key,)).fetchone():\n            findings.append(issue(\"duplicate_resolution\", \"Complaint was already resolved.\", \"accounts.sqlite:resolutions\"))\n        payments = [dict(row) for row in conn.execute(\"SELECT * FROM payments WHERE account_id=?\", (fields.get(\"account_id\", \"\"),))]\n    finally:\n        conn.close()\n    queue = {\"complaintId\": key, \"accountId\": fields.get(\"account_id\"), \"creditAmount\": float(credit), \"currency\": \"AZN\", \"resolution\": \"credit_duplicate\" if credit else \"explain_legitimate\"}\n    return finish(key, fields, findings, queue, creditRecommendation=float(credit), chargedTotal=float(charged_total), duplicateEvidence=duplicate_evidence, timeline=scoped, payments=payments,\n                  recommendation=\"Credit distinct repeated transactions for the same billable event.\" if credit else \"Explain the supported legitimate charges.\")\n\n\ndef workbook(name, title, headers, rows):\n    target = OUTPUTS / name\n    book = Workbook()\n    sheet = book.active\n    sheet.title = title[:31]\n    sheet.append([title])\n    sheet.append([\"Fictional company data and policy. Employee approval required.\"])\n    sheet.append(headers)\n    for row in rows:\n        sheet.append(row)\n    for cell in sheet[3]:\n        cell.font = Font(bold=True, color=\"FFFFFF\")\n        cell.fill = PatternFill(\"solid\", fgColor=\"1E3A5F\")\n    for row in sheet.iter_rows():\n        for cell in row:\n            cell.alignment = Alignment(vertical=\"top\", wrap_text=True)\n    for i, column in enumerate(sheet.columns):\n        from openpyxl.utils import get_column_letter\n        length = max((len(str(c.value or \"\")) for c in list(column)[2:]), default=12)\n        sheet.column_dimensions[get_column_letter(i + 1)].width = min(max(length + 3, 18), 45)\n    sheet.merge_cells(start_row=1, start_column=1, end_row=1, end_column=len(headers))\n    sheet.merge_cells(start_row=2, start_column=1, end_row=2, end_column=len(headers))\n    sheet[\"A1\"].font = Font(size=16, bold=True)\n    sheet[\"A2\"].font = Font(size=10, color=\"555555\")\n    for row in sheet.iter_rows(min_row=3):\n        required_lines = max((max(1, (len(str(cell.value or \"\")) + int(sheet.column_dimensions[cell.column_letter].width) - 1) // int(sheet.column_dimensions[cell.column_letter].width)) for cell in row), default=1)\n        sheet.row_dimensions[row[0].row].height = 18 * required_lines + 8\n    sheet.row_dimensions[1].height = 28\n    sheet.row_dimensions[2].height = 30\n    sheet.freeze_panes = \"A4\"\n    sheet.auto_filter.ref = f\"A3:{sheet.cell(sheet.max_row, sheet.max_column).coordinate}\"\n    book.save(target)\n    return target\n\n\ndef letter(name, title, result, paragraphs):\n    target = OUTPUTS / name\n    templates = list(REFERENCES.rglob(\"letter-template.docx\")) + list(INPUTS.rglob(\"letter-template.docx\"))\n    template = templates[0] if templates else PACKAGE / \"templates\" / \"letter.docx\"\n    document = Document(template) if template.exists() else Document()\n    # Retain template styles and page settings, replacing its instructional body.\n    for element in list(document.element.body):\n        if not element.tag.endswith(\"}sectPr\"):\n            document.element.body.remove(element)\n    document.sections[0].top_margin = Inches(.8)\n    document.sections[0].bottom_margin = Inches(.8)\n    document.add_paragraph(title, \"Title\")\n    document.add_paragraph(\"Fictional demonstration company. This draft requires employee review and is not sent externally.\")\n    document.add_paragraph(\"Business reference \" + result[\"businessKey\"])\n    for paragraph in paragraphs:\n        document.add_paragraph(paragraph)\n    for style_name in [\"Title\", \"Heading 1\", \"Heading 2\"]:\n        document.styles[style_name].font.color.rgb = RGBColor(0, 0, 0)\n        for border in document.styles[style_name]._element.xpath(\".//w:pBdr\"):\n            border.getparent().remove(border)\n    document.styles[\"Normal\"].font.name = \"Arial\"\n    document.styles[\"Normal\"].font.size = Pt(11)\n    document.save(target)\n    return target\n\n\ndef render(kind, result):\n    files = []\n    if kind == \"invoice\":\n        fields = result[\"extracted\"]\n        files.append(workbook(\"review.xlsx\", \"Supplier invoice review\", [\"Business key\", \"Disposition\", \"Quantity\", \"Unit price AZN\", \"Calculated total AZN\", \"Findings\"], [[result[\"businessKey\"], result[\"disposition\"], fields.get(\"quantity\"), fields.get(\"unit_price\"), result.get(\"calculatedTotal\"), \"; \".join(f[\"code\"] for f in result[\"findings\"])]]))\n        if result[\"disposition\"] != \"ready\":\n            files.append(letter(\"correction-letter.docx\", \"Supplier invoice correction request\", result, [\"Please correct or clarify the following invoice details before we can submit the accounting record.\"] + [finding[\"message\"] for finding in result[\"findings\"]]))\n    elif kind == \"onboarding\":\n        files.append(workbook(\"checklist.xlsx\", \"Corporate subscriber checklist\", [\"Document\", \"Provided\", \"Business key\", \"Disposition\"], [[name, name in result[\"extracted\"], result[\"businessKey\"], result[\"disposition\"]] for name in [\"application\", \"extract\", \"authority\", \"identification\"]]))\n        files.append(letter(\"application-packet.docx\", \"Corporate subscriber application packet\", result, [\"Application disposition \" + result[\"disposition\"], \"An electronic extract does not require a stamp. Contract stamp requirements depend on the signer.\"] + result[\"employeeChecks\"]))\n        if result[\"findings\"]:\n            files.append(letter(\"missing-information.docx\", \"Corporate subscriber information request\", result, [finding[\"message\"] for finding in result[\"findings\"]]))\n    else:\n        files.append(workbook(\"reconciliation.xlsx\", \"Billing complaint reconciliation\", [\"Business key\", \"Disposition\", \"Charged AZN\", \"Credit AZN\", \"Recommendation\"], [[result[\"businessKey\"], result[\"disposition\"], result.get(\"chargedTotal\"), result.get(\"creditRecommendation\", 0), result.get(\"recommendation\", \"Clarify or escalate the missing evidence.\")]]))\n        paragraphs = [\"Investigation disposition \" + result[\"disposition\"], result.get(\"recommendation\", \"Further evidence is required.\"), \"Recommended credit AZN \" + str(result.get(\"creditRecommendation\", 0))] + [finding[\"message\"] for finding in result[\"findings\"]]\n        for duplicate in result.get(\"duplicateEvidence\", []):\n            paragraphs.append(\"Event \" + duplicate[\"eventId\"] + \" was billed by distinct transactions \" + \", \".join(duplicate[\"transactions\"]) + \".\")\n        files.append(letter(\"response.docx\", \"Billing complaint investigation response\", result, paragraphs))\n        (OUTPUTS / \"timeline.json\").write_text(json.dumps(result.get(\"timeline\", []), ensure_ascii=False, indent=2))\n        files.append(OUTPUTS / \"timeline.json\")\n    return [{\"path\": p.name, \"name\": p.name, \"mime\": \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\" if p.suffix == \".xlsx\" else \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\" if p.suffix == \".docx\" else \"application/json\"} for p in files]\n\n\ndef run(kind):\n    OUTPUTS.mkdir(parents=True, exist_ok=True)\n    try:\n        result = {\"invoice\": invoice, \"onboarding\": onboarding, \"complaints\": complaints}[kind]()\n    except MissingEvidence as error:\n        result = finish(\"unidentified-\" + kind, {}, [missing_reference(error.source)])\n    artifacts = render(kind, result)\n    (OUTPUTS / \"result.json\").write_text(json.dumps(result, ensure_ascii=False, indent=2))\n    (OUTPUTS / \"manifest.json\").write_text(json.dumps({\"stepId\": os.environ.get(\"WORKFLOW_STEP_ID\", \"validate\"), \"result\": result, \"artifacts\": artifacts}, ensure_ascii=False, indent=2))\n    print(json.dumps({\"disposition\": result[\"disposition\"], \"findings\": len(result[\"findings\"]), \"manifest\": \"manifest.json\"}))\n\n\nif __name__ == \"__main__\":\n    import sys\n    if len(sys.argv) > 1:\n        run(sys.argv[1])\n\nrun(\"onboarding\")\n",
+      "settings.json": "{\"totalTolerance\":\"0.01\"}",
+      "policy.txt": "Compare company identifiers, company names and representative identity across documents and registry.\nRequire representative identification and authority for a subscriber contract. Accept an unstamped electronic extract when registry data agrees.\nA head-signed contract requires a stamp; an authorized representative contract does not. Optional bank and tax-certificate documents remain optional.\nSignature authenticity and original authority remain employee checks. Use application ID as provisioning business key.",
+      "sources/subscriber-documentation.md": "# Public process reference for corporate subscribers\n\nSource: https://www.azercell.com/en/personal/support/number-purchase-and-operations/who-may-be-a-subscriber-of-azercell.html\n\nAccessed: 2026-10-09. Relevant sections: commercial legal entities 2.1 and notes 4 and 5.\n\nThe published requirements include a legal-entity register extract, authority to act for the entity, and identification of the authorized representative. The tax-registration certificate and bank-details letter are optional in the listed commercial-entity section. Electronically registered entities have electronic extracts without a stamp; information is compared with official-register information before acceptance.\n\nStamp requirements are conditional: the published note distinguishes a contract signed by the entity's head from one signed by an authorized person under power of attorney. Signature authenticity remains an employee check in this demonstration.\n\nAll application documents, identification numbers, registry records and provisioning queues supplied with this catalog are synthetic. This is a scoped fictional procedure, not a complete legal or subscriber eligibility determination.\n",
+      "templates/letter.txt": "Use a clear title, business key, evidence, and specific requested correction. Employee reviewed draft only."
+    }
+  },
+  "packageHash": "7ac7669809347f8b2b917fa47bfe7fab75122651593743e839deee17d544000e",
+  "version": 1,
+  "provenance": [
+    {
+      "id": "47c466e7-b1c3-4174-b3c4-75f571426484",
+      "role": "user",
+      "text": "Teach corporate subscriber onboarding from the supplied fictional procedure and synthetic registry snapshot. Compare the application, legal-entity extract, representative identification and authority. Request the identification specifically when it is absent. An electronic extract without a stamp is acceptable if registry information agrees; contract stamp requirements depend on the signer. Keep optional documents optional. Require a human signature authenticity check. Produce checklist.xlsx, application-packet.docx and a conditional missing-information.docx. Require employee approval before a simulated provisioning queue record.\nAn employee-supplied executable template is attached as onboarding-template.json. Inspect its top-level metadata and relevant document facts without printing the scripts or full package. Use this supplied template as the starting draft: copy it intact to /workspace/output/package.json with Python or bash after inspection. Preserve every executable asset; do not rewrite its Python engine or print large outputs. Keep tool output under 1000 characters.",
+      "attachments": [
+        {
+          "path": "uploads/cb45e572-8b77-4deb-85e3-7c3a691fc7ae/onboarding-template.json",
+          "name": "onboarding-template.json",
+          "size": 39732,
+          "mime": "application/json"
+        },
+        {
+          "path": "uploads/7864dda4-e456-49ea-9906-a55b0031e612/application.docx",
+          "name": "application.docx",
+          "size": 36817,
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "path": "uploads/01012592-143c-4ecc-ad4c-b7432a2e522e/authority.docx",
+          "name": "authority.docx",
+          "size": 36772,
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "path": "uploads/109c1911-3478-4ded-8a94-4a3786ae8b3b/extract.docx",
+          "name": "extract.docx",
+          "size": 36774,
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "path": "uploads/91d880d5-170a-4e20-8039-af9f68d9b03c/letter-template.docx",
+          "name": "letter-template.docx",
+          "size": 36812,
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "path": "uploads/1084d7b6-580c-4dc3-a76e-f4d526c8c0cf/procedure.docx",
+          "name": "procedure.docx",
+          "size": 37080,
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "path": "uploads/801f05d0-c37f-4d1c-af51-f14533939dd1/registry.sqlite",
+          "name": "registry.sqlite",
+          "size": 12288,
+          "mime": "application/vnd.sqlite3"
+        }
+      ],
+      "createdAt": "2026-10-09T12:31:01.980Z",
+      "runId": "87692636-3926-462e-868a-f74d37b24667"
+    },
+    {
+      "id": "e4375f5c-92a9-42f8-b119-c2264a273ac5",
+      "role": "assistant",
+      "text": "Generated Corporate subscriber onboarding: 3 ordered steps, 4 document-backed rules. Ready for sample testing and employee review.",
+      "attachments": [],
+      "createdAt": "2026-10-09T12:31:12.540Z",
+      "runId": "87692636-3926-462e-868a-f74d37b24667"
+    },
+    {
+      "id": "0e651668-95c5-4339-84ff-a3997403a50b",
+      "role": "user",
+      "text": "Preserve the executable package. Refine the human review instructions to explicitly require checking original authority and signature authenticity before the employee approves; an unstamped electronic extract remains acceptable when registry data agrees. Write the updated package.json, and summarize the review change. Do not print or rewrite the engine.",
+      "attachments": [],
+      "createdAt": "2026-10-09T12:31:14.454Z",
+      "runId": "f237d85e-3b63-4bef-b959-113e2ad8a67e"
+    },
+    {
+      "id": "f58b2081-f373-4be7-b604-5157756e40c6",
+      "role": "assistant",
+      "text": "Generated Corporate subscriber onboarding: 3 ordered steps, 4 document-backed rules. Ready for sample testing and employee review.",
+      "attachments": [],
+      "createdAt": "2026-10-09T12:31:21.375Z",
+      "runId": "f237d85e-3b63-4bef-b959-113e2ad8a67e"
+    }
+  ],
+  "testReport": {
+    "id": "4854b0d7-de6d-455b-bc10-cb543ab92b10",
+    "revisionId": "1402e021-d230-448d-aac5-21b51bfe8997",
+    "packageHash": "7ac7669809347f8b2b917fa47bfe7fab75122651593743e839deee17d544000e",
+    "caseId": "5715e796-5be4-4ce1-9ce2-cf51bd5aecbd",
+    "createdAt": "2026-10-09T12:31:23.834Z",
+    "executionStatus": "completed",
+    "assertions": [
+      {
+        "path": "validate.disposition",
+        "operator": "eq",
+        "value": "clarification"
+      },
+      {
+        "path": "validate.businessKey",
+        "operator": "exists"
+      }
+    ],
+    "assertionResults": [
+      {
+        "assertion": {
+          "path": "validate.disposition",
+          "operator": "eq",
+          "value": "clarification"
+        },
+        "actual": "clarification",
+        "passed": true
+      },
+      {
+        "assertion": {
+          "path": "validate.businessKey",
+          "operator": "exists"
+        },
+        "actual": "APP-DEV-20261009-CORRECTION",
+        "passed": true
+      }
+    ],
+    "assertionsPassed": true,
+    "elapsedMs": 625,
+    "usage": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0
+    }
+  },
+  "synthetic": true
+}

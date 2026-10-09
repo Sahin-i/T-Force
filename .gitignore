@@ -1,0 +1,40 @@
+# Credentials and machine-specific configuration (also in nested directories)
+.env*
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.aws/
+.azure/
+.codex/
+.agents/
+
+# Dependencies and builds
+node_modules/
+dist/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+
+# Private application state and generated artifacts
+.agent-state/
+workspace/
+deliverables/
+demo-assets/
+.pitch-build/
+catalog/published/*-report.json
+playwright-report/
+test-results/
+coverage/
+*.log
+
+# OS, editor and Office temporary files
+.DS_Store
+._*
+Thumbs.db
+~$*
+.idea/
+.vscode/

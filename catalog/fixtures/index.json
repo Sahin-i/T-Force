@@ -1,0 +1,1585 @@
+{
+  "seed": 20261009,
+  "synthetic": true,
+  "answerKeys": "Backend validation directory only; never mounted",
+  "scenarios": [
+    {
+      "suite": "invoice-development",
+      "id": "invoice-01",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-development/invoice-01/invoice.pdf",
+          "sha256": "55cf69b2e57033d86babbc3d1d0e3d41e5024dad249c64d8a862bb51646d028e"
+        },
+        {
+          "path": "invoice-development/invoice-01/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-01/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-01/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-01/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-development",
+      "id": "invoice-02",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-development/invoice-02/invoice.pdf",
+          "sha256": "5d5f9027a18f49ecaf1bf44bdf3ad6965c96e192396c00a04ec54d5e9041f738"
+        },
+        {
+          "path": "invoice-development/invoice-02/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-02/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-02/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-02/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-development",
+      "id": "invoice-03",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-development/invoice-03/invoice.pdf",
+          "sha256": "31150ea59aefdd64e1b54732bd56eb36ed9e3e199367f83ae4c5b127eee8d541"
+        },
+        {
+          "path": "invoice-development/invoice-03/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-03/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-03/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-03/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-development",
+      "id": "invoice-04",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-development/invoice-04/invoice.pdf",
+          "sha256": "324049b9ade24a651087a0a022288a491d9a2a56f802f0645e060cec282563cc"
+        },
+        {
+          "path": "invoice-development/invoice-04/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-04/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-04/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-04/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-development",
+      "id": "invoice-05",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-development/invoice-05/invoice.pdf",
+          "sha256": "998f1a3e9be04760d3624406d7e075ab29bca138b932681c4b5f77e1befe75bf"
+        },
+        {
+          "path": "invoice-development/invoice-05/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-05/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-05/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-05/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-development",
+      "id": "invoice-06",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-development/invoice-06/invoice.pdf",
+          "sha256": "60301b21f0a2200a9baee474b267a7b50ee703db2ea419f3c22c82f802417f9c"
+        },
+        {
+          "path": "invoice-development/invoice-06/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-development/invoice-06/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-development/invoice-06/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-development/invoice-06/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-01",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-01/invoice.pdf",
+          "sha256": "dc105324aecc576428518ac97231d853a0988e09078573c27461a523a5dc75dc"
+        },
+        {
+          "path": "invoice-heldout/invoice-01/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-01/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-01/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-01/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-02",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-02/invoice.pdf",
+          "sha256": "ae18e4d1164a354e25e587935f2aceda80165e7fee1426307ad3e96eb2af90d6"
+        },
+        {
+          "path": "invoice-heldout/invoice-02/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-02/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-02/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-02/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-03",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-03/invoice.pdf",
+          "sha256": "9c0b835e2e56233847d759148a6784db8633bf515a0d3d14480410dfc2e9cca5"
+        },
+        {
+          "path": "invoice-heldout/invoice-03/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-03/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-03/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-03/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-04",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-04/invoice.pdf",
+          "sha256": "b53b6ed7d4bb154196dec59842d565a68360a1db2e3ab04ca2dfc179e103da82"
+        },
+        {
+          "path": "invoice-heldout/invoice-04/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-04/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-04/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-04/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-05",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-05/invoice.pdf",
+          "sha256": "30ce36a8c540000a3030dc5af0ae1987b1b76a4e98255a4c8a91800d293506ec"
+        },
+        {
+          "path": "invoice-heldout/invoice-05/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-05/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-05/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-05/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-06",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-06/invoice.pdf",
+          "sha256": "b56028b7cbdbe54a915a2b6c5abc838bd5ca67636278df37fe44465a3f6e9fe3"
+        },
+        {
+          "path": "invoice-heldout/invoice-06/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-06/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-06/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-06/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-07",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-07/invoice.pdf",
+          "sha256": "96bcf1b83ad12d26b9c527cf96e0289a828e7215ba24b4944a1fd3325d5d920b"
+        },
+        {
+          "path": "invoice-heldout/invoice-07/letter-template.docx",
+          "sha256": "8b3da129327351541b6119099aaa3831dfcc1d5faf796ed7d888fe8533274fea"
+        },
+        {
+          "path": "invoice-heldout/invoice-07/policy.docx",
+          "sha256": "995c34b02b3ffac4a6da7c3a7a40e7f3af4782b62f58901ba65493c56dfabcd3"
+        },
+        {
+          "path": "invoice-heldout/invoice-07/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-07/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-08",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-08/invoice.pdf",
+          "sha256": "06df0e421c51ed9fda762d72a506837e0321976075f32856e45ca93296ece942"
+        },
+        {
+          "path": "invoice-heldout/invoice-08/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-08/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-08/purchase-orders.xlsx",
+          "sha256": "e665e97e18fafc898f714872c175e123128eee0b729fd3391a181bee8b5225ff"
+        },
+        {
+          "path": "invoice-heldout/invoice-08/supplier-records.sqlite",
+          "sha256": "01980aafe8a68af1a99ac1fbab0e88a1fd38ec3ed03e24b53fc1be7de5037f73"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-09",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-09/invoice.pdf",
+          "sha256": "792abccfbbf729d0637b4a59eeebd6b380803b3231524e35c31cb54f456132b2"
+        },
+        {
+          "path": "invoice-heldout/invoice-09/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-09/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-09/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-09/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-10",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-10/invoice.pdf",
+          "sha256": "dfd64fb3db233ee4fb9f5e0060a1b368e74605693fa8bc477be06596fa7738bb"
+        },
+        {
+          "path": "invoice-heldout/invoice-10/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-10/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-10/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-10/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-11",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-11/invoice.pdf",
+          "sha256": "53a442f71c41a53234411234e67efb5781abfe4e29618a565f57cae51e60a203"
+        },
+        {
+          "path": "invoice-heldout/invoice-11/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-11/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-11/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-11/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-12",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-12/invoice.pdf",
+          "sha256": "593616896b1be52c5fa2a75798bf47d3bc1f66266122db46a684162ef82384f0"
+        },
+        {
+          "path": "invoice-heldout/invoice-12/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-12/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-12/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-12/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-13",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-13/invoice.pdf",
+          "sha256": "3061dda7bd61e265069994140febd710c51e41a34bef8ac19d07ff3796605b09"
+        },
+        {
+          "path": "invoice-heldout/invoice-13/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-13/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-13/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-13/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-14",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-14/invoice.pdf",
+          "sha256": "03654e549c771a458ef23f2ee6295bc071ed99c6e77c61a55bfbda8539a1701d"
+        },
+        {
+          "path": "invoice-heldout/invoice-14/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-14/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-14/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-14/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-15",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-15/invoice.pdf",
+          "sha256": "3ea29adc07badcaf43759c45f3ccd88b77039d5d3b0b5c4ef165e10d3b50c41a"
+        },
+        {
+          "path": "invoice-heldout/invoice-15/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-15/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-15/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-15/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-16",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-16/invoice.pdf",
+          "sha256": "a0c75d433518a6bd5e51670c431de5f8039f488b3260fdf6286a952926f57773"
+        },
+        {
+          "path": "invoice-heldout/invoice-16/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-16/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-16/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-16/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-17",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-17/invoice.pdf",
+          "sha256": "34f7a7cfa5266ff31d1bbec392cb4b0c7cf1b42d3904854d4ef0d3cd66c8c721"
+        },
+        {
+          "path": "invoice-heldout/invoice-17/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-17/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-17/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-17/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-18",
+      "kind": "invoice",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-18/invoice.pdf",
+          "sha256": "9fea793fe09991954bf886c154b2f57abf0524907fd19bfaa624151143cc5f63"
+        },
+        {
+          "path": "invoice-heldout/invoice-18/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-18/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-18/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-18/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-19",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-19/invoice.pdf",
+          "sha256": "3fb03ac0087a3fcb0c5c123b4e89ec226c2969340bc1d6640a579a6a77766d63"
+        },
+        {
+          "path": "invoice-heldout/invoice-19/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-19/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-19/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-19/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "invoice-heldout",
+      "id": "invoice-20",
+      "kind": "invoice",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "invoice-heldout/invoice-20/invoice.pdf",
+          "sha256": "fed0d4f4cdd32aee1c63a84d30312d3957dcadae2951d7b316cab9d8784fd04f"
+        },
+        {
+          "path": "invoice-heldout/invoice-20/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "invoice-heldout/invoice-20/policy.docx",
+          "sha256": "792c9f33f858dda73738320f388295a7e55f22c348fabe5a847298e9af7aa7e1"
+        },
+        {
+          "path": "invoice-heldout/invoice-20/purchase-orders.xlsx",
+          "sha256": "661a6b174c1b9c28ba5522dea8d658fd73036f434e369bfb5583fdec945e4573"
+        },
+        {
+          "path": "invoice-heldout/invoice-20/supplier-records.sqlite",
+          "sha256": "edbef782b1bb29e0cd2b3b82b8651c1548db12beb9aee33eabf5decec0c83891"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-01",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-01/application.docx",
+          "sha256": "a34b1b521909b8e58acebb70a8ef74d88aa64c21f65add619f8b0129cabc2463"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/authority.docx",
+          "sha256": "e6a636dfecacd40d86b0a99d2e4840397d986c0bd051ee7ee482d4955100e9d3"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/extract.docx",
+          "sha256": "bb4a413445aff9cea683c2ce177e1f924e9dcc76022bde4442947cfcb15fc72e"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/identification.docx",
+          "sha256": "b2527406eb3c181938a45bb2a2dcc25b3bc1b55b972bd602d06c1e0bf0082bde"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-01/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-02",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-02/application.docx",
+          "sha256": "5489500c540ea8a26b786ce41c1c3036ceee068b94df9d224bf369acd6ab177a"
+        },
+        {
+          "path": "onboarding-development/onboarding-02/authority.docx",
+          "sha256": "681c6daa1972ebf8b40d9b19d68717a0d65b6e6b6208571392870f996cf2fc3a"
+        },
+        {
+          "path": "onboarding-development/onboarding-02/extract.docx",
+          "sha256": "70de75cd3552f077f2fef536eea6f21d464c0ab03484204c1247ae2201c81d03"
+        },
+        {
+          "path": "onboarding-development/onboarding-02/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-02/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-02/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-03",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-03/application.docx",
+          "sha256": "2968e9cc1ff8f0c744e13851babaf97544c65b9547f45b6c096e63e0b773ed8c"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/authority.docx",
+          "sha256": "0653e9477a9d08f08f7e22f2376beed531477bf822dbf89c8b1f27c10b7a2894"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/extract.docx",
+          "sha256": "062682c0049835704b8c205846eb86750af87e5098ee8bfdb3ad089b07054b8a"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/identification.docx",
+          "sha256": "a459e05d1053744b2a5cbc8716e1b7df1eb4944c799776809ea1ced0cffba825"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-03/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-04",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-04/application.docx",
+          "sha256": "547adbccf3c8f443a81e998d14dab0512006925ef6272881760c0f0b823f7fbc"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/authority.docx",
+          "sha256": "6fe552eb5d7289a20daaa51ffe85510f7ee337dd73db4611a22b3fc9211b0fd5"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/extract.docx",
+          "sha256": "f9bd1d7a37cb11d7dcc054e6f069fb8660cf0ba8e1829bbfa65ab9154e9eb2fe"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/identification.docx",
+          "sha256": "eb832a35e2aa6acc7e9406bae6ee9d15374948eefcc9c615c4c156334d26f5eb"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-04/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-05",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-05/application.docx",
+          "sha256": "6a6ce8278deb3c0fb7406df224cd333e1c15b4c175bd6de7265a13907974857c"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/authority.docx",
+          "sha256": "6fe552eb5d7289a20daaa51ffe85510f7ee337dd73db4611a22b3fc9211b0fd5"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/extract.docx",
+          "sha256": "f9bd1d7a37cb11d7dcc054e6f069fb8660cf0ba8e1829bbfa65ab9154e9eb2fe"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/identification.docx",
+          "sha256": "eb832a35e2aa6acc7e9406bae6ee9d15374948eefcc9c615c4c156334d26f5eb"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-05/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-development",
+      "id": "onboarding-06",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-development/onboarding-06/application.docx",
+          "sha256": "1ab7e8c7bda5008f58b23f82d0a02f5473a53275740a30bab2bcdd529924f2b1"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/authority.docx",
+          "sha256": "e6a636dfecacd40d86b0a99d2e4840397d986c0bd051ee7ee482d4955100e9d3"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/extract.docx",
+          "sha256": "bb4a413445aff9cea683c2ce177e1f924e9dcc76022bde4442947cfcb15fc72e"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/identification.docx",
+          "sha256": "9bc0c47a07d330df23664e8db05e6f067715ce3ac2ae275ee3b09c3f212ba20b"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-development/onboarding-06/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-01",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-01/application.docx",
+          "sha256": "f219a81e4ea1218e339ceef412cbb4d185783c094414c07490c42e5d5aadb4a6"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/authority.docx",
+          "sha256": "e6a636dfecacd40d86b0a99d2e4840397d986c0bd051ee7ee482d4955100e9d3"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/extract.docx",
+          "sha256": "bb4a413445aff9cea683c2ce177e1f924e9dcc76022bde4442947cfcb15fc72e"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/identification.docx",
+          "sha256": "b2527406eb3c181938a45bb2a2dcc25b3bc1b55b972bd602d06c1e0bf0082bde"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-01/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-02",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-02/application.docx",
+          "sha256": "d77f6ae642858ab7e518f629c532d42a7036c4fd2b6d30e2e0ce24e16ea0ff85"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-02/authority.docx",
+          "sha256": "681c6daa1972ebf8b40d9b19d68717a0d65b6e6b6208571392870f996cf2fc3a"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-02/extract.docx",
+          "sha256": "70de75cd3552f077f2fef536eea6f21d464c0ab03484204c1247ae2201c81d03"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-02/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-02/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-02/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-03",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-03/application.docx",
+          "sha256": "e087a6fa7aee5880eda4c3a51387363df9f718cdaccde61b916c2f5b923c177c"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/authority.docx",
+          "sha256": "0653e9477a9d08f08f7e22f2376beed531477bf822dbf89c8b1f27c10b7a2894"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/extract.docx",
+          "sha256": "062682c0049835704b8c205846eb86750af87e5098ee8bfdb3ad089b07054b8a"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/identification.docx",
+          "sha256": "a459e05d1053744b2a5cbc8716e1b7df1eb4944c799776809ea1ced0cffba825"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-03/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-04",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-04/application.docx",
+          "sha256": "83976259f58a4e6fd505d5b1eae024b337934397268d931b7524f3a8191665a9"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/authority.docx",
+          "sha256": "6fe552eb5d7289a20daaa51ffe85510f7ee337dd73db4611a22b3fc9211b0fd5"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/extract.docx",
+          "sha256": "f9bd1d7a37cb11d7dcc054e6f069fb8660cf0ba8e1829bbfa65ab9154e9eb2fe"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/identification.docx",
+          "sha256": "eb832a35e2aa6acc7e9406bae6ee9d15374948eefcc9c615c4c156334d26f5eb"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-04/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-05",
+      "kind": "onboarding",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-05/application.docx",
+          "sha256": "fc9acb6caa2d473e95ae599a8374d0c77c4604c76753f789b75087555caf04bb"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/authority.docx",
+          "sha256": "6fe552eb5d7289a20daaa51ffe85510f7ee337dd73db4611a22b3fc9211b0fd5"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/extract.docx",
+          "sha256": "f9bd1d7a37cb11d7dcc054e6f069fb8660cf0ba8e1829bbfa65ab9154e9eb2fe"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/identification.docx",
+          "sha256": "eb832a35e2aa6acc7e9406bae6ee9d15374948eefcc9c615c4c156334d26f5eb"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-05/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "onboarding-heldout",
+      "id": "onboarding-06",
+      "kind": "onboarding",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "onboarding-heldout/onboarding-06/application.docx",
+          "sha256": "9ce0076a22ef185f8e76bc961edb878b385598c8f44abf4cfa32feb3e495b952"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/authority.docx",
+          "sha256": "e6a636dfecacd40d86b0a99d2e4840397d986c0bd051ee7ee482d4955100e9d3"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/extract.docx",
+          "sha256": "bb4a413445aff9cea683c2ce177e1f924e9dcc76022bde4442947cfcb15fc72e"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/identification.docx",
+          "sha256": "9bc0c47a07d330df23664e8db05e6f067715ce3ac2ae275ee3b09c3f212ba20b"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/procedure.docx",
+          "sha256": "5e71643ae621706bee5a73f468e4bacccfc0a812134359b26339177cacab6d3f"
+        },
+        {
+          "path": "onboarding-heldout/onboarding-06/registry.sqlite",
+          "sha256": "41936d9c631edadf20edcb101175dc4217f407b521f389a3e920fff5067cf278"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-01",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 0,
+      "files": [
+        {
+          "path": "complaints-development/complaints-01/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-01/complaint.docx",
+          "sha256": "d6725ac83bd4eb909827cdddcfcf5ae6c14509be72c5f672e180888412abc55f"
+        },
+        {
+          "path": "complaints-development/complaints-01/events.csv",
+          "sha256": "d0864031a912ca0f4dffc17ec410ae4a3cb01854cb62a3d5f4c0f74a2ea7a4c2"
+        },
+        {
+          "path": "complaints-development/complaints-01/invoice.pdf",
+          "sha256": "eb72362955779810ff1dbf4377535d7830e6250af0857962a3e1dc43580f1ba5"
+        },
+        {
+          "path": "complaints-development/complaints-01/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-01/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-02",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "complaints-development/complaints-02/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-02/complaint.docx",
+          "sha256": "e503bc8663c060c83fafdd09c398be0f3ad76e3156bc3130fd6364618447072c"
+        },
+        {
+          "path": "complaints-development/complaints-02/events.csv",
+          "sha256": "ee6745d174f86fb7f432538581b1f74ef010035be7f9ead8e83f2f69c55ce59d"
+        },
+        {
+          "path": "complaints-development/complaints-02/invoice.pdf",
+          "sha256": "332ce2f2bdc85ca9375ac63c5b6d777d0416be83502b539897de96d90e9a419b"
+        },
+        {
+          "path": "complaints-development/complaints-02/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-02/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-03",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "complaints-development/complaints-03/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-03/complaint.docx",
+          "sha256": "b2554f1de6a137ab1882832f398067405f436f8e38bb4e82bb8b9786ae3f4569"
+        },
+        {
+          "path": "complaints-development/complaints-03/invoice.pdf",
+          "sha256": "447b0855799a7d0aac15fc1a9b966881f4f63516d429376645636bc647cacde1"
+        },
+        {
+          "path": "complaints-development/complaints-03/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-03/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-04",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "complaints-development/complaints-04/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-04/complaint.docx",
+          "sha256": "436e139512a5dd24ddb945e638c3e480a5219e15a5a8b353576093bcdb7c5156"
+        },
+        {
+          "path": "complaints-development/complaints-04/events.csv",
+          "sha256": "a6a664445f2f73524a574a305ece954b2a50db893646ec3420c9e7b1927a8a90"
+        },
+        {
+          "path": "complaints-development/complaints-04/invoice.pdf",
+          "sha256": "098cfd38c184a2c78324a1349aeb995bf5066eac5d9195e0d2459116d1d77377"
+        },
+        {
+          "path": "complaints-development/complaints-04/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-04/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-05",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "complaints-development/complaints-05/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-05/complaint.docx",
+          "sha256": "1a0019cfc1b165d484ea38c2736189dd27f5cdad0c411e6a2db3ecb9890a7cf0"
+        },
+        {
+          "path": "complaints-development/complaints-05/events.csv",
+          "sha256": "d0864031a912ca0f4dffc17ec410ae4a3cb01854cb62a3d5f4c0f74a2ea7a4c2"
+        },
+        {
+          "path": "complaints-development/complaints-05/invoice.pdf",
+          "sha256": "daeb43bcfd3cd958c17d37687deb82c3da7becdb0ca428d52a06716bece2b5d5"
+        },
+        {
+          "path": "complaints-development/complaints-05/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-05/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-development",
+      "id": "complaints-06",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "complaints-development/complaints-06/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-development/complaints-06/complaint.docx",
+          "sha256": "7f07e86c6e7e97c7977671694f0b48d7e92b5b83b8907b99271ea1a667695f39"
+        },
+        {
+          "path": "complaints-development/complaints-06/events.csv",
+          "sha256": "ee6745d174f86fb7f432538581b1f74ef010035be7f9ead8e83f2f69c55ce59d"
+        },
+        {
+          "path": "complaints-development/complaints-06/invoice.pdf",
+          "sha256": "9d2b837c59ff0e533bc3e012efd041acfcea3540e8121de8a807a4bf730eb56d"
+        },
+        {
+          "path": "complaints-development/complaints-06/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-development/complaints-06/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-01",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 0,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-01/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-01/complaint.docx",
+          "sha256": "c0cbd6765a8d3248f5b6fab076a7a7e06f171b2710a2ca121be13e4500bbbaba"
+        },
+        {
+          "path": "complaints-heldout/complaints-01/events.csv",
+          "sha256": "d0864031a912ca0f4dffc17ec410ae4a3cb01854cb62a3d5f4c0f74a2ea7a4c2"
+        },
+        {
+          "path": "complaints-heldout/complaints-01/invoice.pdf",
+          "sha256": "eb72362955779810ff1dbf4377535d7830e6250af0857962a3e1dc43580f1ba5"
+        },
+        {
+          "path": "complaints-heldout/complaints-01/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-01/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-02",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 1,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-02/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-02/complaint.docx",
+          "sha256": "a14ff25adb0de0e4d5ca0e4ea7515e13a324b9b7934ead9b38e7165c32a2bf13"
+        },
+        {
+          "path": "complaints-heldout/complaints-02/events.csv",
+          "sha256": "ee6745d174f86fb7f432538581b1f74ef010035be7f9ead8e83f2f69c55ce59d"
+        },
+        {
+          "path": "complaints-heldout/complaints-02/invoice.pdf",
+          "sha256": "332ce2f2bdc85ca9375ac63c5b6d777d0416be83502b539897de96d90e9a419b"
+        },
+        {
+          "path": "complaints-heldout/complaints-02/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-02/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-03",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 2,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-03/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-03/complaint.docx",
+          "sha256": "95b9436d9a981a05ebdf78dcabd387fc61592d2dabe3eb153ebef5dc469bda58"
+        },
+        {
+          "path": "complaints-heldout/complaints-03/invoice.pdf",
+          "sha256": "447b0855799a7d0aac15fc1a9b966881f4f63516d429376645636bc647cacde1"
+        },
+        {
+          "path": "complaints-heldout/complaints-03/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-03/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-04",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 0,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-04/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-04/complaint.docx",
+          "sha256": "2fb715aec4187a6c7a611f17fab0293fc69acfea516b2799c85b768f39ab6023"
+        },
+        {
+          "path": "complaints-heldout/complaints-04/events.csv",
+          "sha256": "a6a664445f2f73524a574a305ece954b2a50db893646ec3420c9e7b1927a8a90"
+        },
+        {
+          "path": "complaints-heldout/complaints-04/invoice.pdf",
+          "sha256": "098cfd38c184a2c78324a1349aeb995bf5066eac5d9195e0d2459116d1d77377"
+        },
+        {
+          "path": "complaints-heldout/complaints-04/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-04/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-05",
+      "kind": "complaints",
+      "language": "en",
+      "layout": 1,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-05/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-05/complaint.docx",
+          "sha256": "6041bfd0534ec04fd867b093f0c72838a62dc2d495215999f5acefae691bcfd9"
+        },
+        {
+          "path": "complaints-heldout/complaints-05/events.csv",
+          "sha256": "d0864031a912ca0f4dffc17ec410ae4a3cb01854cb62a3d5f4c0f74a2ea7a4c2"
+        },
+        {
+          "path": "complaints-heldout/complaints-05/invoice.pdf",
+          "sha256": "daeb43bcfd3cd958c17d37687deb82c3da7becdb0ca428d52a06716bece2b5d5"
+        },
+        {
+          "path": "complaints-heldout/complaints-05/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-05/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    },
+    {
+      "suite": "complaints-heldout",
+      "id": "complaints-06",
+      "kind": "complaints",
+      "language": "az",
+      "layout": 2,
+      "files": [
+        {
+          "path": "complaints-heldout/complaints-06/accounts.sqlite",
+          "sha256": "e650fdd85501badea78afbaf08b6682bf3f602add6c5509cafecd1a9cc934a9c"
+        },
+        {
+          "path": "complaints-heldout/complaints-06/complaint.docx",
+          "sha256": "7f07e86c6e7e97c7977671694f0b48d7e92b5b83b8907b99271ea1a667695f39"
+        },
+        {
+          "path": "complaints-heldout/complaints-06/events.csv",
+          "sha256": "ee6745d174f86fb7f432538581b1f74ef010035be7f9ead8e83f2f69c55ce59d"
+        },
+        {
+          "path": "complaints-heldout/complaints-06/invoice.pdf",
+          "sha256": "9d2b837c59ff0e533bc3e012efd041acfcea3540e8121de8a807a4bf730eb56d"
+        },
+        {
+          "path": "complaints-heldout/complaints-06/letter-template.docx",
+          "sha256": "a53b21e9b72ec0335669f046a540801538b447568acd6371adedeff3263757a7"
+        },
+        {
+          "path": "complaints-heldout/complaints-06/policy.docx",
+          "sha256": "ca08ffb3de0bf52d2882353f9fb85abe49e4e0a0fab77b3606ad47b9a4c51d6b"
+        }
+      ]
+    }
+  ]
+}
